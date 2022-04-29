@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { formatMoney } from '../../Administracao/useUtils'
 
 const Countdown = ({ products }) => {
-  const [timerDays, setTimerDays] = useState('00')
+  // const [timerDays, setTimerDays] = useState('00')
   const [timerHours, setTimerHours] = useState('00')
   const [timerMinutes, setTimerMinutes] = useState('00')
   const [timerSeconds, setTimerSeconds] = useState('00')
@@ -14,13 +14,13 @@ const Countdown = ({ products }) => {
   let interval = useRef()
 
   const startTimer = () => {
-    const countDownDate = new Date('April 27, 2022 23:59:59').getTime()
+    const countDownDate = new Date('April 27, 2025 23:59:59').getTime()
 
     interval = setInterval(() => {
       const now = new Date().getTime()
       const distance = countDownDate - now
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      // const days = Math.floor(distance / (1000 * 60 * 60 * 24))
       const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       )
@@ -29,12 +29,12 @@ const Countdown = ({ products }) => {
 
       if (distance < 0) {
         clearInterval(interval.current)
-        setTimerDays('00')
-        setTimerHours('00')
-        setTimerMinutes('00')
-        setTimerSeconds('00')
+        // setTimerDays("00")
+        setTimerHours("00")
+        setTimerMinutes("00")
+        setTimerSeconds("00")
       } else {
-        setTimerDays(days)
+        // setTimerDays(days)
         setTimerHours(hours)
         setTimerMinutes(minutes)
         setTimerSeconds(seconds)
@@ -44,7 +44,6 @@ const Countdown = ({ products }) => {
 
   useEffect(() => {
     startTimer()
-    return () => clearInterval(interval.current)
   })
 
   return (
@@ -60,13 +59,13 @@ const Countdown = ({ products }) => {
                 <h2 className="h2_timer">{product.title}</h2>
               </div>
               <div className="contador">
-                <div>
+                {/* <div>
                   <p className="p_timer">{timerDays}</p>
                   <p className="p_timer">
                     <small>Dias</small>
                   </p>
                 </div>
-                <span className="span_timer">:</span>
+                <span className="span_timer">:</span> */}
                 <div>
                   <p className="p_timer">{timerHours}</p>
                   <p className="p_timer">

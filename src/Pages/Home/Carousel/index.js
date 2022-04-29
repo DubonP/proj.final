@@ -10,7 +10,7 @@ import { formatMoney } from '../../Administracao/useUtils'
 export default function Carousel({ products }) {
   const handleDragStart = e => e.preventDefault()
 
-  var ProdutosCar = products.slice(13, 16).map(product => (
+  var ProdutosCar = products.slice(13, 17).map(product => (
     <div className="Box_carro" key={product.id}>
       <img
         className="image_box"

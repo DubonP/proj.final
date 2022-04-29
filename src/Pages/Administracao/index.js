@@ -72,7 +72,6 @@ function Admin() {
   }
 
   async function newProduct() {
-    // event.preventDefault()
 
     if (!title || !description || !price || !image) {
       alert('Preencha todos os campos.')
@@ -114,7 +113,7 @@ function Admin() {
           method: 'DELETE'
         }
       )
-      // alert('Produto deletado')
+      alert('Produto deletado')
       getProducts()
     } catch (error) {
       alert('Erro ao deletar o produtos, tente novamente')
@@ -144,7 +143,6 @@ function Admin() {
   }
 
   async function editProduct() {
-    // event.preventDefault()
 
     if (category > 0) {
       try {
@@ -164,7 +162,7 @@ function Admin() {
           },
           body: JSON.stringify(body)
         })
-        // alert('Dados do produto alterados com sucesso.')
+        alert('Dados do produto alterados com sucesso.')
         clearStates()
         getProducts()
       } catch (error) {
