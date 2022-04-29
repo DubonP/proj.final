@@ -201,7 +201,7 @@ function Admin() {
   }
 
   return (
-    <div className="Admin container">
+    <div className="admin container">
       <section className="admin-header">
         <h1 className="admin-h1">Lista de produtos</h1>
         <div className="button-icon-admin">
